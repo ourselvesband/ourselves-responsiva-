@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ourselves - Tributo Audioslave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #000;
+        }
+
+        header .logo img {
+            height: 80px;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 3em;
+            margin-top: 10px;
+            text-align: center;
+            animation: slideInFromTop 1s ease-out;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin-top: 15px;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #ccc;
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero {
+            height: 60vh;
+            background: url('Background.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .fotos {
+            padding: 50px;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+        }
+
+        .fotos h2 {
+            margin-bottom: 30px;
+            font-size: 2em;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .galeria {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .galeria .integrante {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 3px solid #444;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            animation: fadeInModal 0.5s ease;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .contato {
+            padding: 50px;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            animation: fadeInContato 1s ease-out;
+        }
+
+        .contato h2 {
+            margin-bottom: 20px;
+        }
+
+        .contato p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .contato form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contato form input, .contato form textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contato form button {
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contato form button:hover {
+            background-color: #333;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ccc;
+        }
+
+        @keyframes fadeInContato {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="titulo do site.png" alt="Ourselves">
+    </div>
+    <h1>Ourselves - Tributo Audioslave</h1>
+    <nav>
+        <ul>
+            <li><a href="#fotos">Fotos</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero"></section>
+
+<section id="fotos" class="fotos">
+    <h2>Fotos dos Integrantes</h2>
+    <div class="galeria">
+        <div class="integrante" onclick="abrirModal('BACKGROUND 2.jpg')">
+            <img src="BACKGROUND 2.jpg" alt="BACKGROUND 2">
+            <h3>Banda</h3>
+        </div>
+        <div class="integrante" onclick="abrirModal('leo.jpg')">
+            <img src="leo.jpg" alt="Vocalista">
+            <h3>Leo Cornell</h3>
+        </div>
+        <div class="integrante" onclick="abrirModal('Luke.jpg')">
+            <img src="Luke.jpg" alt="Baterista">
+            <h3>Luke Wilk</h3>
+        </div>
+        <div class="integrante" onclick="abrirModal('Paulo.jpg')">
+            <img src="Paulo.jpg" alt="Guitarrista">
+            <h3>Paulo Morello</h3>
+        </div>
+        <div class="integrante" onclick="abrirModal('jeff.jpg')">
+            <img src="jeff.jpg" alt="Baixista">
+            <h3>Jeff Commerford</h3>
+        </div>
+    </div>
+</section>
+
+<section id="sobre" class="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A banda Ourselves, formada por talentosos músicos apaixonados pelo rock, está celebrando dois anos de sucesso com seu tributo ao icônico Audioslave.
+        Desde o início, a Ourselves tem se dedicado a recriar a energia e a intensidade das performances ao vivo do Audioslave.</p>
+</section>
+
+<section id="contato" class="contato">
+    <h2>Contato</h2>
+    <p>Telefone: (11) 99378-2945</p>
+    <p>WhatsApp: (11) 99378-2945</p>
+    <p>Email: audiourselves@gmail.com</p>
+    
+</section>
+
+<footer>
+    <ul>
+        <li><a href="https://www.instagram.com/audiourselves/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.youtube.com/channel/UCSR1XUh0eMi2KfCQweK4WtQ" target="_blank">YouTube</a></li>
+    </ul>
+    <p>&copy; 2024 Ourselves - Tributo Audioslave</p>
+</footer>
+
+<div class="modal" id="modal">
+    <img id="modal-img" src="">
+</div>
+
+<script>
+    function abrirModal(src) {
+        const modal = document.getElementById('modal');
+        const img = document.getElementById('modal-img');
+        img.src = src;
+        modal.style.display = 'flex';
+    }
+
+    document.getElementById('modal').onclick = function () {
+        this.style.display = 'none';
+    };
+</script>
+
+</body>
+</html>
